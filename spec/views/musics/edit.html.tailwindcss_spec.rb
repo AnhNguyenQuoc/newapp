@@ -16,7 +16,6 @@ RSpec.describe "musics/edit", type: :view do
     render
 
     assert_select "form[action=?][method=?]", music_path(music), "post" do
-
       assert_select "input[name=?]", "music[title]"
 
       assert_select "input[name=?]", "music[file]"
