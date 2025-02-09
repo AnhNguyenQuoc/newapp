@@ -8,3 +8,10 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+ #musicPlayer {
+  z-index: 999;
+ }
+
+.hidden {
+  display: none;
+}
