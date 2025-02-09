@@ -1,0 +1,16 @@
+<div id="<%= dom_id music %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Title:</strong>
+    <%= music.title %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">File:</strong>
+    <% if music.file.attached? && music.file.audio? %>
+      <div data-controller="track" data-audio-url="<%= url_for(music.file) %>" data-audio-title="<%= music.title %>" data-track-music-player-outlet="#musicPlayer">
+        <button type="button" class="text-blue-600 hover:text-blue-800" data-action="click->track#play:prevent">
+          Play
+        </button>
+      </div>
+    <% end %>
+  </p>
+</div>
