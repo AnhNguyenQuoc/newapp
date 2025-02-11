@@ -8,9 +8,58 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
- #musicPlayer {
-  z-index: 999;
- }
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+
+#pages-homepage {
+  @apply m-0 p-0 box-border;
+  font-family: 'Oswald', sans-serif;
+}
+
+#pages-homepage body {
+  @apply flex justify-center align-center;
+  min-height: 100vh;
+  background: #434750;
+}
+
+#pages-homepage ul {
+  @apply relative;
+  transform: skewY(-15deg);
+}
+
+#pages-homepage ul li {
+  @apply relative;
+  list-style: none;
+  width: 200px;
+  background: #3e3f46;
+  padding: 15px;
+  z-index: var(--i);
+}
+
+#pages-homepage ul li:hover {
+  background: #33a3ee;
+  transform: translateX(50px);
+}
+
+#pages-homepage ul li a {
+  text-decoration: none;
+  color: #999;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+#pages-homepage ul li a:hover {
+  color: #fff;
+}
+
+#pages-homepage ul li:last-child::after {
+  box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+ 
+#musicPlayer {
+z-index: 999;
+}
 
 .hidden {
   display: none;
