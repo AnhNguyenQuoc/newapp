@@ -10,23 +10,33 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
 
-#pages-homepage {
-  @apply m-0 p-0 box-border;
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#navigation {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Oswald', sans-serif;
 }
 
-#pages-homepage body {
-  @apply flex justify-center align-center;
+#navigation body {
+  @apply flex justify-center;
+  align-items: center;
   min-height: 100vh;
   background: #434750;
 }
 
-#pages-homepage ul {
+#navigation ul {
   @apply relative;
   transform: skewY(-15deg);
 }
 
-#pages-homepage ul li {
+#navigation ul li {
   @apply relative;
   list-style: none;
   width: 200px;
@@ -35,12 +45,12 @@
   z-index: var(--i);
 }
 
-#pages-homepage ul li:hover {
+#navigation ul li:hover {
   background: #33a3ee;
   transform: translateX(50px);
 }
 
-#pages-homepage ul li a {
+#navigation ul li a {
   text-decoration: none;
   color: #999;
   display: block;
@@ -49,12 +59,20 @@
   transition: 0.5s;
 }
 
-#pages-homepage ul li a:hover {
+#navigation ul li a:hover {
   color: #fff;
 }
 
-#pages-homepage ul li:last-child::after {
+#navigation ul li:last-child::after {
   box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+#navigation ul li.active {
+  background-color: #33a3ee;
+}
+
+#navigation ul li.active a {
+  color: white;
 }
  
 #musicPlayer {

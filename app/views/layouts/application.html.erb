@@ -18,8 +18,8 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= vite_client_tag %>
+    <%= vite_stylesheet_tag "application.css" %>
     <%= vite_typescript_tag 'application' %>
     <!--
       If using a TypeScript entrypoint file:
@@ -35,7 +35,7 @@
 
   <body id="<%= controller_name %>-<%= controller.action_name %>">
     <main class="container mx-auto mt-28 px-5 flex h-full">
-      <%= render "layouts/nagivation" %>
+      <%= render "layouts/navigation" %>
 
       <% flash.each do |type, message| %>
         <% 
@@ -58,8 +58,9 @@
           </button>
         </div>
       <% end %>
-
-      <%= yield %>
+      <div class="container ml-36">
+        <%= yield %>
+      </div>
     </main>
     <div data-controller="music-player" id="musicPlayer" data-turbo-permanent 
         class="fixed bottom-0 left-0 right-0 w-full bg-gray-900 text-black p-4 flex items-center justify-between hidden">
