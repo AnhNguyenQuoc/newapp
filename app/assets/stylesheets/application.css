@@ -10,13 +10,6 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
 
-body {
-  background-image: url('background.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
 #navigation {
   margin: 0;
   padding: 0;
@@ -43,6 +36,10 @@ body {
   background: #3e3f46;
   padding: 15px;
   z-index: var(--i);
+}
+
+#navigation ul li.active:hover {
+  transform: translateX(0px);
 }
 
 #navigation ul li:hover {
